@@ -1,0 +1,47 @@
+
+  <!-- <form (ngSubmit)="message()">
+   <div class="form-group">
+    <label for="exampleInputEmail1">Sender</label>
+    <input type="text" class="form-control" name="username" [(ngModel)]="msg.username">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Message</label>
+    <input type="text" class="form-control" name="message" [(ngModel)]="msg.message">
+  </div>
+   <input type="submit" class="btn btn-info" value="send">
+  </form> -->
+
+      <form (ngSubmit)='message()'>
+        <div class="panel panel-default">
+          <div class="panel-heading top-bar">
+            <div class="col-md-8 col-xs-8">
+              <h3 class="panel-title"><span class="glyphicon glyphicon-comment"></span> ChatApp - Anis</h3>
+            </div>
+          </div>
+          <div class="panel-body msg_container_base">
+            <div class="row msg_container base_sent">
+              <div class="col-md-10 col-xs-10">
+                <div class="messages msg_sent">
+                  <p id="message"></p>
+                  <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                </div>
+
+              </div>
+              <div class="col-md-2 col-xs-2 avatar">
+                <img
+                  src="https://scontent.ftun10-1.fna.fbcdn.net/v/t1.6435-9/120354802_2643004959283160_3260406345399806443_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=GfIGWXQGuSoAX8LOr7W&_nc_ht=scontent.ftun10-1.fna&oh=00_AT_skH6ONuHRDlhY444m0MsfLun8034EhENYHODHq2KWJQ&oe=625CDB2F"
+                  class=" img-responsive rounded-circle">
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <div class="input-group">
+              <input type="text" class="form-control input-sm chat_input" name="message" [(ngModel)]="msg.message"/>
+              <span class="input-group-btn">
+                <input type="submit" class="btn btn-primary btn-sm" id="btn-chat">
+              </span>
+            </div>
+          </div>
+        </div>
+      </form>
+

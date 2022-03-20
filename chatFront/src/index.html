@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>ChatFront</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+    <script>
+
+      // Enable pusher logging - don't include this in production
+      Pusher.logToConsole = true;
+
+      var pusher = new Pusher('14b5c54efc5c056e2212', {
+        cluster: 'eu'
+      });
+
+      var channel = pusher.subscribe('chat');
+      channel.bind('message', function (data) {
+        // alert('this is you data')
+        // console.log(data)
+        // console.log(JSON.stringify(data));
+        // document.getElementById('username').innerHTML = data.username;
+        console.log(data)
+        document.getElementById('message').innerHTML = data.message;
+      });
+    </script>
+  </head>
+  <body>
+   <app-root></app-root>
+  </body>
+</html>
